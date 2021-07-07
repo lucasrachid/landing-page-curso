@@ -1,0 +1,262 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+}
+
+/* FONTS 
+
+font-family: 'MontSerrat', sans-serif;
+font-family: 'Open Sans', sans-serif; 
+
+*/
+
+/*========== BASE - Structure ==========*/
+
+html {
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+}
+
+:root {
+  --font-1: "Open sans", sans-serif;
+  --font-2: "MontSerrat", sans-serif;
+  --primary-color: #0f193b;
+  --secondary-color: rgb(35, 109, 109);
+  --white-color: #ffffff;
+  --light-gray-color: #eeeeee;
+  --gap: 3rem;
+}
+
+body {
+  font-family: var(--font-1);
+  font-size: 2rem;
+  color: var(--primary-color);
+  line-height: 1.5;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-2);
+  text-transform: uppercase;
+}
+
+h1 {
+  font-size: 6rem;
+}
+
+h2 {
+  font-size: 6rem;
+  margin-bottom: 5rem;
+  line-height: 1.2;
+}
+
+h3 {
+  font-size: 5rem;
+}
+
+h4 {
+  font-size: 4.5rem;
+}
+
+h5 {
+  font-size: 4rem;
+}
+
+h6 {
+  font-size: 3.5rem;
+}
+
+p {
+  margin-bottom: 3rem;
+}
+
+.main-bg {
+  background-image: url("/landing-page-curso/assets/img/main-bg.svg");
+  background-size: cover;
+  background-position: center center;
+  color: var(--white-color);
+}
+
+.white-bg {
+  background-color: var(--white-color);
+  color: var(--primary-color);
+}
+
+.main-content {
+  max-width: 120rem;
+  margin: 0 auto;
+  padding: 8rem var(--gap);
+}
+
+.section {
+  min-height: 100vh;
+}
+
+.menu-spacing {
+  height: 6.5rem;
+}
+
+/*========== MENU - NAVIGATION ==========*/
+nav ul {
+  list-style: none;
+  display: flex;
+}
+
+nav ul li a {
+  display: block;
+  padding: 2rem;
+  font-size: 1.8rem;
+  font-family: var(--font-2);
+  position: relative;
+  text-transform: uppercase;
+  color: var(--primary-color);
+}
+
+aside div h1 {
+  font-size: 3rem;
+}
+
+.main-content h1 a span:nth-child(1) {
+  color: var(--primary-color);
+}
+
+.main-content h1 a span:nth-child(3) {
+  color: var(--primary-color);
+}
+
+.main-content h1 a span:nth-child(2) {
+  color: var(--secondary-color);
+}
+
+.main-content h1 a span:nth-child(4) {
+  color: var(--secondary-color);
+}
+
+nav ul li a::after {
+  content: "";
+  position: absolute;
+  bottom: 1rem;
+  left: 50%;
+  width: 0;
+  background-color: var(--secondary-color);
+  height: 0.2rem;
+  transition: all 300ms ease-in-out;
+}
+
+nav ul li a:hover::after {
+  width: 50%;
+  left: 25%;
+  right: 25%;
+}
+
+.menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  border-bottom: 0.1rem solid var(--light-gray-color);
+  z-index: 1;
+}
+
+.menu-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+/* ========== SECTION HOME ========== */
+.home-content {
+  display: grid;
+  /* grid-auto-flow: column; */
+  grid-template-columns: 1fr 1.5fr;
+  gap: var(--gap);
+  min-height: 100vh;
+  position: relative;
+  top: -8rem;
+}
+
+.home-text-content,
+.home-img {
+  text-align: left;
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+}
+
+.home-text-content h2 {
+  font-size: 6rem;
+  margin-bottom: 5rem;
+  line-height: 1.2;
+}
+
+.home-img img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* ========== HISTORY ========== */
+.history-content {
+  min-height: 100vh;
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  max-width: 64rem;
+  text-align: center;
+}
+
+/* ========== WORK ========== */
+#work {
+  min-height: 100vh;
+}
+
+.grind-one-content {
+  min-height: 100vh;
+  display: flex;
+  /* flex-flow: column wrap; */
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: center;
+}
+
+.grid-main-heading {
+  margin-bottom: 1rem;
+  margin-top: 5rem;
+}
+
+.grid-description {
+  padding-bottom: 5rem;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--gap);
+  counter-reset: grid-counter;
+}
+
+.grid h3 {
+  font-size: 3rem;
+  position: relative;
+  padding-left: 5rem;
+  padding-bottom: 2rem;
+}
+
+.grid h3::before {
+  counter-increment: grid-counter;
+  content: counter(grid-counter);
+  position: absolute;
+  font-size: 8rem;
+  font-style: italic;
+  top: -4rem;
+  left: -2rem;
+  transform: rotate(5deg);
+}
