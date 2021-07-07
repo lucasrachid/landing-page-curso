@@ -18,16 +18,24 @@
     <title>Landing Page</title>
   </head>
   <body>
-    <aside class="menu white-bg">
+    <input
+      id="close-menu"
+      class="close-menu"
+      type="checkbox"
+      role="button"
+      arial-label="close-menu"
+    />
+    <label for="close-menu" title="close-menu" class="close-menu-label"></label>
+    <aside id="header" class="menu white-bg">
       <div class="main-content menu-content">
-        <h1>
+        <h1 onclick="getElementById('close-menu').checked = false;">
           <a href="#home"
             ><span>&lt;</span><span>Inova</span><span>legal</span
             ><span>&gt;</span></a
           >
         </h1>
         <nav>
-          <ul>
+          <ul onclick="getElementById('close-menu').checked = false;">
             <li><a href="#home">Home</a></li>
             <li><a href="#history">History</a></li>
             <li><a href="#work">WorkA</a></li>
@@ -324,6 +332,7 @@
         >
       </p>
     </footer>
+    <a href="#home" class="back-to-top">➤</a>
     <script src="https://unpkg.com/scrollreveal"></script>
     <script src="assets/js/main.js"></script>
   </body>
